@@ -15,11 +15,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from core.views import main_page, upload_page
+from core.views import IndexView, UploadView
+from django.conf.urls.static import static
+from django.conf import settings
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', main_page),
-    path('upload/', upload_page),
-]
+    path('', IndexView.as_view(), name='index'),
+    path('upload/', UploadView.as_view(), name='upload')
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

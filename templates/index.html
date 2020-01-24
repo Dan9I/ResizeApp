@@ -5,12 +5,13 @@
     <title>Title</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
-<body>
-<div class="container">
+<body><div class="container">
 <nav class="navbar navbar-light bg-light">
   <a class="navbar-brand" href="#">Главное меню</a>
     <a href="upload/" class="btn btn-outline-success" role="button" aria-pressed="true">Загрузить изображение</a>
 </nav>
-</div>
-</body>
+{% for img in images %}
+	<img src="{{ img.image.url }}" height="100" width="100" uk-img></img>
+{% endfor %}
+</div></body>
 </html>
