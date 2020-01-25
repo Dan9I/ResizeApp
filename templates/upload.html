@@ -11,6 +11,7 @@
     <a href="/" class="btn btn-outline-success" role="button" aria-pressed="true">Главное меню</a>
 </nav>
     <form enctype="multipart/form-data" action="" method="post">
+        {% csrf_token %}
             {{ form }}
             <input type="submit" value="Сохранить">
         </form>
