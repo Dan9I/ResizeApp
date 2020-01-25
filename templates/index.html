@@ -11,7 +11,7 @@
     <a href="upload/" class="btn btn-outline-success" role="button" aria-pressed="true">Загрузить изображение</a>
 </nav>
 {% for img in images %}
-	<img src="{{ img.image.url }}" height="100" width="100" uk-img>
+    <a href="/{{img.imgHash}}"><img src="{{ img.image.url }}" height="150" width="150" uk-img></a>
 {% endfor %}
 </div></body>
 </html>
