@@ -1,8 +1,6 @@
 from .models import Images
 from .forms import ImageForm
-from django.views.decorators.csrf import csrf_protect
 from django.shortcuts import render
-from django.utils.decorators import method_decorator
 from django.http import HttpResponseRedirect
 from django.views import View
 
@@ -14,13 +12,11 @@ class IndexView(View):
 
         context = {
             'images': images,
-            'form': form
         }
 
         return render(request, 'index.html', context)
 
 class UploadView(View):
-    @method_decorator(csrf_protect)
     def get(self, request):
 
         form = ImageForm()
@@ -31,7 +27,6 @@ class UploadView(View):
 
         return render(request, 'upload.html', context)
 
-    @method_decorator(csrf_protect)
     def post(self, request):
 
         form = ImageForm(request.POST, request.FILES)
