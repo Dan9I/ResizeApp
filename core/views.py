@@ -1,7 +1,7 @@
 from .models import Images
 from .forms import imgForm
 from django.shortcuts import render
-from django.http import HttpResponseRedirect, StreamingHttpResponse, HttpResponse
+from django.http import HttpResponseRedirect, HttpResponse
 from django.views import View
 from django.core.cache import cache
 from django.core import files
